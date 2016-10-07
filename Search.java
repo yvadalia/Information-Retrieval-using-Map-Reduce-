@@ -197,7 +197,7 @@ public class Search extends Configured implements Tool {
 	      }
 	   }
    
-   
+   //Mapper for Job3 
    public static class MapSearch extends Mapper<Object ,  Text ,  Text ,  Text > {
 	      
 	      private static ArrayList<String> queryList = new ArrayList<String>();
@@ -206,12 +206,9 @@ public class Search extends Configured implements Tool {
 	      	throws IOException{
 	    	  String query = context.getConfiguration().get("query");
 	    	  String[] qeuryarr = query.split(" ");
-	    	  //int cnt = 0;
 	    	  for(String st : qeuryarr){
-	    		  //if(cnt>=2){
+	    		  
 	    			  queryList.add(st);
-	    		 // }
-	    		  //cnt++;
 	    	  }
 	      }
 
