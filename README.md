@@ -4,13 +4,15 @@ Information retrieval (IR) is concerned with finding material (e.g., documents) 
 
 The job accepts as input a user query and outputs a list of documents with scores that best matches the query.
 
-Steps to run Search.java  
-$javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* Search.java -d build -Xlint 
-$jar -cvf Search.jar -C build/ .  
-$hadoop fs -rmr /user/cloudera/wordcount/output 
-$hadoop fs -rmr /user/cloudera/intermediate_output 
-$hadoop fs -rmr /user/cloudera/intermediate_output1 
-$hadoop jar Search.jar org.myorg.TFIDF /user/cloudera/wordcount/input /user/cloudera/wordcount/output “yellow Hadoop” 
-$hadoop fs -cat /user/cloudera/wordcount/output/* 
+## Steps to run Search.java  
+
+1. Compile the Search class
+<dd>$javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* Search.java -d build -Xlint 
+
+2. Create the JAR file for the application
+<dd>$jar -cvf Search.jar -C build/ .  
+
+3. Run the application from the JAR file, passing the input and output directories and the query. 
+<dd>$hadoop jar Search.jar org.myorg.TFIDF /user/cloudera/wordcount/input /user/cloudera/wordcount/output “yellow Hadoop” 
  
 Note:- The query part is between “”
